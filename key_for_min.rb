@@ -5,9 +5,11 @@ def key_for_min_value(name_hash)
   if name_hash == {}
     return nil
   end
-  smallest =name_hash
+  smallest =nil
   name_hash.collect do |key,value|
-    if value<smallest
+    if smallest == nil 
+      smallest = value
+    elsif value<smallest
       smallest = value
     end
   end
